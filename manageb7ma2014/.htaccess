@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteBase /manageb7ma2014/
+RewriteCond $1 !^(index\.php|items|cache|assets|css|js|img|robots\.txt|favicon\.ico|license.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA]

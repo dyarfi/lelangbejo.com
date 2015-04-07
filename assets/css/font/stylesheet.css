@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'strait';
+    src: url('strait-regular-webfont.eot');
+    src: url('strait-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('strait-regular-webfont.woff') format('woff'),
+         url('strait-regular-webfont.ttf') format('truetype'),
+         url('strait-regular-webfont.svg#straitregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'abraham';
+    src: url('abrahamlincoln-webfont.eot');
+    src: url('abrahamlincoln-webfont.eot?#iefix') format('embedded-opentype'),
+         url('abrahamlincoln-webfont.woff') format('woff'),
+         url('abrahamlincoln-webfont.ttf') format('truetype'),
+         url('abrahamlincoln-webfont.svg#abraham_lincolnregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
