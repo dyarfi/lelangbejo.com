@@ -39,6 +39,9 @@ $config['point_label_bidding'] = "Lelang";
 /*
  * Text untuk SOSMED
  */
-$config['share_twitter'] = "Uji kadar bejomu di LELANG BEJO biar bisa beli LAPTOP HP dengan HARGA SESUKAMU! Klik www.lelangbejo.com";
-$config['share_facebook'] = "Yo Konco-Konco uji kadar Bejomu di LELANG BEJO biar bisa beli LAPTOP HP dengan harga yang kalian suka! Tunggu apalagi, langsung klik www.lelangbejo.com";
-$config['share_facebook_invite'] = "YYo Konco-Konco uji kadar Bejomu di LELANG BEJO biar bisa beli LAPTOP HP dengan harga yang kalian suka! Tunggu apalagi, langsung klik www.lelangbejo.com";
+//$config['share_twitter'] = "Uji kadar bejomu di LELANG BEJO biar bisa beli LAPTOP HP dengan HARGA SESUKAMU! Klik www.lelangbejo.com";
+//$config['share_facebook'] = "Yo Konco-Konco uji kadar Bejomu di LELANG BEJO biar bisa beli LAPTOP HP dengan harga yang kalian suka! Tunggu apalagi, langsung klik www.lelangbejo.com";
+//$config['share_facebook_invite'] = "YYo Konco-Konco uji kadar Bejomu di LELANG BEJO biar bisa beli LAPTOP HP dengan harga yang kalian suka! Tunggu apalagi, langsung klik www.lelangbejo.com";
+
+$config['share_twitter'] 	= "Beli %s dengan harga semau kamu di www.lelangbejo.com";
+$config['share_facebook'] 	= "%s";

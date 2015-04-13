@@ -15,12 +15,12 @@
                 <!-- *** -->
                 <!--<div class="daun2">&nbsp;</div>-->
                 <div class="jamu2">&nbsp;</div>
-                <div class="bejo">&nbsp;</div>
+                <!--div class="bejo">&nbsp;</div-->
                 <!-- *** -->
                 <div class="container-home">
                     <div class="con-img"><img src="<?=base_url().xml('dir_item').$item->file_name?>" border="0"></div>
                     <div class="con-text">
-                        <ul class="con-menu">
+                        <!--ul class="con-menu">
                             <li><a>STEP 1</a></li>
                             <li class="border"></li>
                             <li><a>STEP 2</a></li>
@@ -28,17 +28,19 @@
                             <li><a>STEP 3</a></li>
                             <li class="border"></li>
                             <li><a class="active">STEP 4</a></li>
-                        </ul>
-                        <p>Lelang</p>
+                        </ul-->
+                        <!--p>Lelang</p-->
                         <form method="post">
                             <div class="step4-body">
-                                <div class="kirim-barang">
+                                <!--div class="kirim-barang">
                                     <a href="javascript:;" class="popup" data="1" data-id="1"><img src="<?=base_url()?>assets/img/detail-barang.png" border="0"></a>
                                     <a href="javascript:;" class="popup" data="1" data-id="2"><img src="<?=base_url()?>assets/img/pengiriman.png" border="0"></a>
-                                </div>
-                                <p>Monggo masukkan harga yang ingin Konco Bejo bayarkan untuk membeli <?=$item->name?></p>
+                                </div-->
+								<h1><?=nl2br($item->headline)?></h1>
+								<p><?=nl2br($item->body)?></p>
+								<!--p>Monggo masukkan harga yang ingin Konco Bejo bayarkan untuk membeli <?=$item->name?></p-->
                                 <div class="dompet_save_input">
-                                    Rp. <input class="input" type="text" name="price" required value="<?=set_value('price')?>" />
+                                    Rp. <input class="input" type="text" name="price" required maxlength="14" value="<?=set_value('price')?>" />
                                 </div>
                             </div>
                             <div class="step2-button">
@@ -55,7 +57,7 @@
         <div id="LightBox1" class="box_content"> 
             <div class="box_in"> 
                 <div class="close popup" data="2" data-id="1">X</div>
-                <div class="title">DETAI BARANG</div>
+                <div class="title">DETAIL BARANG</div>
                 <div class="text">
                     <?=nl2br($item->detail)?>
                 </div>

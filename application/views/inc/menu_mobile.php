@@ -13,7 +13,8 @@
             $name = explode(' ',user_name());
             $first_name = $name[0];
             ?>
-            <li><a class="nav_profile" href="<?=site_url('profile')?>">Hai, <?=$first_name?></a></li>
+            <!--li><a class="nav_profile" href="<?=site_url('profile')?>">Hai, <?=$first_name?></a></li-->
+			<li><a class="nav_profile" href="<?=site_url('profile')?>">PROFILKU</a></li>
         <?php }?>
     </ul>
     <div class="cara"><a href="<?=site_url('cara-lelang')?>">CARA LELANG</a></div>

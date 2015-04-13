@@ -82,14 +82,14 @@
                                                             </div>
                                                             <div class="thumb-lelang">
                                                                 <img src="<?=base_url()?>assets/img/mekanisme/9.png" border="0">
-                                                                <p>Periode lelang Laptop HP 240 G3 9PA berlangsung mulai 23 Desember – 23 Januari 2014</p>
+                                                                <p>Periode Lelang IV Sepaket Jersey Asli Manchester United mulai 10 April-12 Mei 2015</p>
                                                             </div>
                                                             <div class="clear"></div>
 							</div>
                                                         <div class="row">
                                                             <div class="thumb-lelang">
                                                                 <img src="<?=base_url()?>assets/img/mekanisme/10.png" border="0">
-                                                                <p>Pemenang akan diumumkan di website ini pada tanggal 28 Januari 2014</p>
+                                                                <p>Pemenang akan diumumkan di website pada tanggal 17 Mei 2015</p>
                                                             </div>
                                                             <div class="thumb-lelang">
                                                                 <img src="<?=base_url()?>assets/img/mekanisme/11.png" border="0">

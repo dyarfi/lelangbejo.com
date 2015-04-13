@@ -26,6 +26,13 @@ class Facebook extends MY_Controller {
         $this->facebook_app_id = $this->config->item('facebook_app_id');
         $this->facebook_app_secret = $this->config->item('facebook_app_secret');
         $this->facebook_page_id = $this->config->item('facebook_page_id');
+		
+		//Set item active
+        $this->item_active = $this->item_mod->get_item_active();
+		
+		//printf(xml('share_facebook'), strtoupper($this->item_active->name));
+		//exit;
+		
     }
 	
     /**
@@ -245,11 +252,11 @@ class Facebook extends MY_Controller {
 
             if($total_day < xml('max_per_day'))
             {
-                $message = xml('share_facebook');//.$user->last_points;
+                $message = sprintf(xml('share_facebook'), $this->item_active->share_text);//.$user->last_points;
                 $date_now = date_now_id(TRUE);
-                $picture_url = base_url().xml('dir_media')."banner_fb.png";
-
-                $param = array(
+                //$picture_url = base_url().xml('dir_media')."banner_fb.png";
+				$picture_url = base_url().xml('dir_item').$this->item_active->file_name;
+				$param = array(
                     'access_token' => $fb_token,
                     'message' => $message,
                     'picture' => $picture_url

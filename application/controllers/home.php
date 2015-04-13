@@ -21,6 +21,7 @@ class Home extends MY_Controller {
         //Set item active
         $this->item_active = $this->item_mod->get_item_active();
         $this->is_item_active = $this->is_item_active();
+		//print_r(user_id());
     }
 
     function index()
@@ -225,7 +226,15 @@ class Home extends MY_Controller {
     
     public function step4()
     {
-        //Cek item masih aktif atau tidak
+		//Default from from 
+		//print_r($_GET['price']);
+		//$_POST['price'] = $_POST['price'] ? $_POST['price'] : $_GET['price'];
+		
+		if ($this->input->get('price')) {
+			$_POST['price'] = $this->input->post('price') ? $this->input->post('price') :  $this->input->get('price');
+		} 
+		
+		//Cek item masih aktif atau tidak
         $this->check_item();
         
         //Cek user login
@@ -238,7 +247,10 @@ class Home extends MY_Controller {
         if($user->last_points < xml('point_bidding')){
             redirect('step3?point=no');
         }
-        
+		
+        //print_r($this->input->get_post('price'));
+		//exit;
+		
         //Item
         $item = $this->item_active;
         
@@ -479,18 +491,138 @@ class Home extends MY_Controller {
 
         $this->load->view('item_detail',$data);
     }
-            
+    
+	// Page not blocked	
     function blocked()
     {
         echo '<h2>Maaf, user anda saat ini dalam masalah.</h2>';
         exit;
     }
 
+	// Page not found
     function notfound()
     {
         echo '<h2>Maaf, halaman yang anda cari tidak ditemukan.</h2>';
         exit;
     }
+	
+	// Page gagal
+	function gagal() {
+		$data = array();
+        $this->load->view('page_gagal',$data);
+    }
+	
+	// Page berhasil
+	function berhasil() {
+		$data = array();
+		$this->load->view('page_berhasil',$data);
+	}
+	
+	function bidding () {
+	
+	
+		//Cek item masih aktif atau tidak
+        //$this->check_item();
+        
+        //Jika user tidak ditemukan pada database
+        //$user = $this->get_user();
+		
+		// Set defaults 
+		$result = array();
+		
+		// Default data setup
+	    $fields	= array(
+			    //'session'		=> '',
+			    'price'		=> '');
+
+	    $errors	= $fields;
+		
+		// Load validation
+		$this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<p class="error"><i class="glyphicon glyphicon-alert"></i>&nbsp;&nbsp;', '</p>');
+		
+		// Set validation config
+		$config = array(
+				array('field' => 'price', 
+					  'label' => 'Nilai Bejomu', 
+					  'rules' => 'trim|required|xss_clean|numeric|callback_is_not_unique_cb[price]|max_length[25]'),	
+				//array('field' => 'session', 
+					 // 'label' => 'Session', 
+					  // 'rules' => 'trim|required|xss_clean|max_length[32]')
+		 );
+
+		// Set rules to form validation
+		$this->form_validation->set_rules($config);
+
+		// Run validation for checking
+		if ($this->form_validation->run() === FALSE) {
+
+				 // Set error fields
+			    $errors = array();
+			    foreach(array_keys($fields) as $error) {
+				    $errors[$error] = form_error($error);
+			    }
+
+			    // Set previous post merge to default
+			    $fields = array_merge($fields, $this->input->post());	
+
+		} else {
+		
+				/*
+				$posts = array(
+				    // Primary Accounts
+				    'id' => $id,
+				    'group_id' => $this->input->post('group_id'),
+				    'username' => $this->input->post('username'),
+				    'email' => $this->input->post('email'),
+				    'backend_access' => $this->input->post('backend_access'),
+				    'full_backend_access' => $this->input->post('full_backend_access'),
+				    'status' => $this->input->post('status'),
+				    // Profile Accounts
+				    'gender'	=> $this->input->post('gender'),				
+				    'first_name'	=> $this->input->post('first_name'),
+				    'last_name'	=> $this->input->post('last_name'),				
+				    'birthday'	=> $this->input->post('birthday'),
+				    'phone'		=> $this->input->post('phone'),	
+				    'mobile_phone'	=> $this->input->post('mobile_phone'),				
+				    'fax'		=> $this->input->post('fax'),
+				    'website'	=> $this->input->post('website'),
+				    'about'		=> $this->input->post('about'),
+				    'division'	=> $this->input->post('division')
+			    );
+				*/
+
+			    // Set data to add to database
+			    // $this->Users->updateUser($posts);
+
+			    // Set message
+			    //$this->session->set_flashdata('message','User updated');
+
+			    // Redirect after add
+			    //redirect(ADMIN. $this->controller . '/index');
+				
+				//$data['code']		= '1';
+				//$data['message'] 	= 'Success';
+				//$data['text']		= $this->get_user();
+				
+				// $this->input->post('bidding')
+				//echo json_encode($data,1);
+					
+				$this->session->set_userdata('bidding', $this->input->post('price'));
+				
+				$data['code'] = user_id() ? 1 : 'must_login';
+				
+		
+		}
+		
+		$data['fields'] = $fields;
+		
+		$data['errors'] = $errors;
+		
+		echo json_encode($data,1);
+		
+		//redirect('home');
+	}
     
     private function is_item_active()
     {
@@ -531,6 +663,7 @@ class Home extends MY_Controller {
     private function get_user()
     {
         $user = $this->user_mod->get_byuid(user_id());
+		
         if(!$user){
             redirect('logout');
         }
@@ -617,9 +750,57 @@ class Home extends MY_Controller {
             return FALSE;
         }
     }
-    
+    // -------------- CALLBACK METHODS -------------- //
+
+    // Match Unique for price
+    public function is_not_unique_cb($price) {		
+		
+		$return = true;
+        $length = strlen($price);
+        
+        //Rp 10.000
+        if($length == 5)
+        {
+            $price1 = substr($price, 1);//0000
+            $price2 = substr($price, 2);//000
+            if(($price1 == '0000') OR ($price2 == '000')){
+				$this->form_validation->set_message('is_not_unique_cb', 'Tidak unik jooo harganya');
+                $return = false;
+            }
+        }
+        
+        //Rp 100.000
+        if($length == 6)
+        {
+            $price1 = substr($price, 1);//00000
+            $price2 = substr($price, 2);//0000
+            $price3 = substr($price, 3);//000
+            if(($price1 == '00000') OR ($price2 == '0000') OR ($price3 == '000')){
+				$this->form_validation->set_message('is_not_unique_cb', 'Tidak unik jooo harganya');
+                $return = false;
+            }
+        }
+        
+        //Rp 1.000.000
+        if($length >= 7)
+        {
+            $price1 = substr($price, 1);//000000
+            $price2 = substr($price, 2);//00000
+            $price3 = substr($price, 3);//0000
+            $price4 = substr($price, 4);//000
+            if(($price1 == '000000') OR ($price2 == '00000') OR ($price3 == '0000') OR ($price4 == '000')){
+				$this->form_validation->set_message('is_not_unique_cb', 'Tidak unik jooo harganya');
+                $return = false;
+            }
+        }
+        
+        return $return;
+
+    }
+	
     private function is_not_unique($price=0)
     {
+	
         $return = FALSE;
         $length = strlen($price);
         

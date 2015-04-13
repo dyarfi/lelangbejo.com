@@ -21,7 +21,7 @@
                 <div class="container-home">
                     <div class="con-img"><img src="<?=base_url().xml('dir_item').$item->file_name?>" border="0"></div>
                     <div class="con-text">
-                        <ul class="con-menu">
+                        <!--ul class="con-menu">
                             <li><a class="active">STEP 1</a></li>
                             <li class="border"></li>
                             <li><a>STEP 2</a></li>
@@ -29,7 +29,7 @@
                             <li><a>STEP 3</a></li>
                             <li class="border"></li>
                             <li><a>STEP 4</a></li>
-                        </ul>
+                        </ul-->
                         <p>Sebelum memulai berpartisipasi dalam <br>LELANG BEJO, monggo isi data diri berikut</p>
                         <form method="post" enctype="multipart/form-data">
                             <table class="con-input">

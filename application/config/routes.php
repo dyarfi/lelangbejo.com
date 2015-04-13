@@ -59,6 +59,10 @@ $route['step2'] = "home/step2";
 $route['step3'] = "home/step3";
 $route['step4'] = "home/step4";
 $route['dompet'] = "home/dompet";
+
+$route['gagal'] = "home/gagal";
+$route['berhasil'] = "home/berhasil";
+
 $route['dagangan-laku'] = "home/items";
 $route['detail-dagangan-laku/(:num)/(:any)'] = "home/detail_item/$1/$2";
 $route['detail-dagangan-laku/(:num)'] = "home/detail_item/$1";

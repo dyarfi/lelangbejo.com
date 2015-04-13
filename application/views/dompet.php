@@ -7,32 +7,25 @@
     <body>
         <?php $this->load->view('inc/menu');?>
         
-        <div id="body">
+        
             
             <?php $this->load->view('inc/menu_mobile');?>
-            
-            <div class="bendera1">&nbsp;</div>
-            <div class="main">
-                    <!-- *** -->
+        <div class="main-home">
+                    <!-- *** 
                     <div class="pencil">&nbsp;</div>
                     <div class="jamu">&nbsp;</div>
                     <div class="daun">&nbsp;</div>
                     <div class="bendera2">&nbsp;</div>
                     <div class="bendera3">&nbsp;</div>
-                    <!-- *** -->
+                    *** -->
 
                     <div class="container">
-                        <div class="kotak-head">DOMPET</div>
                         <div class="dompet-body">
                             <!-- content -->
                             <div class="dompet_left">
-                                <div class="dompet_koin">
-                                    <p>Jumlah KOIN Konco Bejo saat ini adalah:</p>
-                                    <h2><b><?=$user->last_points?></b> Koin</h2>
-                                </div>
                                 <form method="post" action="<?=site_url('dompet')?>" enctype="multipart/form-data">
                                     <div class="dompet_save">
-                                        <p>Monggo membeli Bintang Toedjoe Masuk Angin pack (kemasan isi 5) lalu masukkan Kode Transaksi yang Konco Bejo dapatkan di sini:</p>
+                                        <p class="big3">Biar bisa ikutan lelang, monggo tambah koin Konco Bejo dengan submit struk bukti pembelian B7MA di sini. </p>
                                         <div class="dompet_save_input">
                                             <input class="input" type="text" name="code" value="<?=set_value('code')?>" placeholder="Masukan Kode Pembelian" />
                                         </div>
@@ -54,14 +47,21 @@
                                 </div>
                             </div>	
                             <div class="dompet_right">
-                                <div class="scrollbar"><div class="track"><div class="thumb"></div></div></div>
+                                <h1 class="superbig">DOMPET</h1>
+                                <div class="dompet_koin">
+                                    <p class="big3">Jumlah KOIN Konco Bejo saat ini adalah</p>
+                                    <h2 class="big2"><?=$user->last_points?></h2>
+                                    <h3 class="big1">Koin</h3>
+                                    <img class="img-ctr img-responsive" src="<?=base_url()?>assets/img/koin-gede.png" border="0">
+                                </div>
+                                <!--div class="scrollbar"><div class="track"><div class="thumb"></div></div></div>
                                 <div class="viewport">
                                     <div class="overview">
                                         <table>
                                             <thead>
                                                 <tr>
                                                     <td>TANGGAL</td>
-                                                    <td>DESCRIPSI</td>
+                                                    <td>DESKRIPSI</td>
                                                     <td>DEBIT</td>
                                                     <td>KREDIT</td>
                                                 </tr>
@@ -83,13 +83,13 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
+                                </div-->
                             </div>					
                             <!-- End content -->
                         </div>
                     </div>
             </div>
-        </div>
+        <div class="choco-bg"></div>
         
         <!-- Pop Up Error -->
         <?php $this->load->view('inc/error_s');?>
@@ -107,7 +107,7 @@
                 <center><a href="<?=site_url('dompet')?>"><img src="<?=base_url()?>assets/img/go-dompet.png" /></a></center>
             <?php } ?>
             <?php if($upload == 1){?>
-                <p class="success">Submit kode pembelian dan upload foto bon pembelian berhasil. Tunggu 1x24 jam hari kerja hingga admin memverifikasi Kode Transaksi.</p>
+                <p class="success"><br/>Submit kode pembelian dan upload foto bon pembelian berhasil.<br/>Tunggu 1x24 jam hari kerja hingga admin memverifikasi Kode Transaksi.</p>
                 <br>
                 <center><a href="<?=site_url('dompet')?>"><img src="<?=base_url()?>assets/img/go-dompet.png" /></a></center>
             <?php } ?>

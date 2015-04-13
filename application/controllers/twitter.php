@@ -29,7 +29,10 @@ class Twitter extends MY_Controller {
         $this->load->model('log_mod');
         $this->load->model('point_mod');
         $this->load->model('item_mod');
-
+	
+		//Set item active
+        $this->item_active = $this->item_mod->get_item_active();
+		
         // User must Logged in
         $this->is_logged_in();
 
@@ -149,7 +152,8 @@ class Twitter extends MY_Controller {
         }
 
         $user_id = $user->id;
-        $message = xml('share_twitter');
+		
+		$message = sprintf(xml('share_twitter'), strtoupper($this->item_active->name));//.$user->last_points;
 
         if($this->session->userdata('tw_token') && $this->session->userdata('tw_secret'))
         {

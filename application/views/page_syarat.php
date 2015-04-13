@@ -53,15 +53,17 @@
                                                     </ul>
                                                     <h4>Hadiah</h4>
                                                     <ul>
-                                                        <li>Hadiah utama: Laptop HP 240 G3 9PA </li>
-                                                        <li>Hadiah hiburan: Voucher pulsa senilai @25.000</li>
+                                                        <li>Hadiah utama: SEPAKET JERSEY MANCHESTER UNITED </li>
+							<li>Hadiah hiburan: voucher pulsa senilai Rp 25.000 untuk 75 orang.</li>
+                                                        <li>Paket Jersey dapat diterima paling lambat 30 hari setelah pihak Bintang Toedjoe Masuk Angin menghubungi pemenang Lelang Bejo</li>
+							<li>Pihak Bintang Toedjoe Masuk Angin akan menghubungi pemenang untuk konfirmasi penulisan nama yang diinginkan untuk ditulis di belakang Jersey</li>
                                                     </ul>
                                                     <h4>Konfirmasi Penyerahan Hadiah</h4>
                                                     <ul>
                                                         <li>Seluruh pemenang diwajibkan untuk mengirim data diri yang ditentukan berupa nama lengkap, alamat lengkap, foto/scan KTP, nomor telepon/handphone yang bisa dihubungi, link akun facebook dan foto struk pembelian melalui message ke fan page Facebook Mas Bejo</li>
                                                         <li>Pemenang akan dihubungi oleh PT Bintang Toedjoe paling lambat 10 hari setelah periode lelang berakhir</li>
                                                         <li>Apabila pemenang tidak dapat dihubungi hingga 30 hari setelah periode lelang berakhir maka peserta yang memiliki angka lelang kedua terendah dan tidak ada yang menyamai akan memperoleh kesempatan memenangkan hadiah lelang</li>
-
+							<li>Pemenang tidak akan dipungut biaya lain selain biaya pembelian Jersey sesuai dengan harga yang ditulis sebelumnya.</li>
                                                     </ul>
                                                     <h4>Informasi Umum</h4>
                                                     <ul>
@@ -74,7 +76,6 @@
                                                         <li>Semua materi yang masuk menjadi hak PT Bintang Toedjoe dan dapat dipergunakan untuk keperluan promosi</li>
                                                         <li>Apabila terdapat kecurangan dan atau pelanggaran yang dilakukan oleh pemenang, maka juri berhak untuk membatalkan penyerahan hadiah</li>
                                                         <li>Syarat dan Ketentuan dapat berubah sewaktu-waktu tanpa ada pemberitahuan terlebih dahulu</li>
-
                                                     </ul>
 							<!-- end Content -->
 						</div>

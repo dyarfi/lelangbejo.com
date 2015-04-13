@@ -22,7 +22,7 @@
                 <div class="container-home">
                     <div class="con-img"><img src="<?=base_url().xml('dir_item').$item->file_name?>" border="0"></div>
                     <div class="con-text">
-                        <ul class="con-menu">
+                        <!--ul class="con-menu">
                             <li><a>STEP 1</a></li>
                             <li class="border"></li>
                             <li><a class="active">STEP 2</a></li>
@@ -30,7 +30,7 @@
                             <li><a>STEP 3</a></li>
                             <li class="border"></li>
                             <li><a>STEP 4</a></li>
-                        </ul>
+                        </ul-->
                         <p>Cara Ikutan</p>
                         <div class="step2-body">
                             <div class="scrollbar"><div class="track"><div class="thumb"></div></div></div>

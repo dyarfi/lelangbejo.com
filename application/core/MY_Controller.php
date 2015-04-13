@@ -49,6 +49,7 @@ class  MY_Controller  extends  CI_Controller {
         if(!is_membership())
         {
             $string = uri_string();
+			
             $url_callback = NULL;
             if(strlen($string) > 0){
                 $str_first = substr($string,0,1);
@@ -58,13 +59,14 @@ class  MY_Controller  extends  CI_Controller {
                     $url_callback = $string;
                 }
             }
+			
             //$url_callback = (strlen($string) > 0 ) ? substr($string, 1) : NULL;
             if(isset($_SERVER['QUERY_STRING'])){
-               $url_callback .= !empty($_SERVER['QUERY_STRING']) ? '?' .$_SERVER['QUERY_STRING'] : ''; 
+               $url_callback .= !empty($_SERVER['QUERY_STRING']) ? '&' .$_SERVER['QUERY_STRING'] : ''; 
             }
             $url_callback = empty($url_callback) ? 'home' : $url_callback;
             
-            //echo $url_callback;exit;
+            //echo $url_callback; exit;
             
             redirect('facebook/auth?url='.$url_callback);
             die();

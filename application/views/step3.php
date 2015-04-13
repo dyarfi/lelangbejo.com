@@ -14,15 +14,15 @@
             <div class="main-home">
                 <!-- *** -->
                 
-                <!--<div class="daun2">&nbsp;</div>-->
+                <!--<div class="daun2">&nbsp;</div>
                 <div class="jamu2">&nbsp;</div>
-                <div class="bejo">&nbsp;</div>
+                <div class="bejo">&nbsp;</div>-->
                 
                 <!-- *** -->
                 <div class="container-home">
                     <div class="con-img"><img src="<?=base_url().xml('dir_item').$item->file_name?>" border="0"></div>
                     <div class="con-text">
-                        <ul class="con-menu">
+                        <!--ul class="con-menu">
                             <li><a>STEP 1</a></li>
                             <li class="border"></li>
                             <li><a>STEP 2</a></li>
@@ -30,8 +30,8 @@
                             <li><a class="active">STEP 3</a></li>
                             <li class="border"></li>
                             <li><a>STEP 4</a></li>
-                        </ul>
-                        <p>Dompet</p>
+                        </ul-->
+                        <!--p>Dompet</p-->
                         <form method="post" enctype="multipart/form-data" action="<?=  site_url('step3')?>">
                             <div class="step2-body" style="height: 263px;">
                                 <p style="margin-bottom: 2px; text-align: center;">KOIN yang Konco Bejo miliki saat ini adalah</p>
@@ -48,10 +48,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="step2-button" style="margin: 20px -60px 0 -10px; width: auto;">
-                                <a style="margin: 0;" href="<?=site_url('step2')?>"><img src="<?=base_url()?>assets/img/step3-back.png" border="0"></a>
-                                <a style="margin: 0 4px;" href="javascript:;" onclick="$('form').submit();"><img src="<?=base_url()?>assets/img/step3-submit.png" border="0"></a>
-                                <a style="margin: 0;" href="<?=site_url('step4')?>"><img src="<?=base_url()?>assets/img/step3-skip.png" border="0"></a>
+                            <div class="step2-button" style="margin: 20px -60px 0 -10px; width: auto; text-align: center;">
+				<center>
+                                <!-- a style="margin: 0;" href="<?=site_url('step2')?>"><img src="<?=base_url()?>assets/img/step3-back.png" border="0"></a -->
+                                <a style="margin: 0 4px;float: none;" href="javascript:;" onclick="$('form').submit();"><img class="img-ctr" src="<?=base_url()?>assets/img/step3-submit.png" border="0"></a>
+                                <!-- a style="margin: 0;" href="<?=site_url('step4')?>"><img src="<?=base_url()?>assets/img/step3-skip.png" border="0"></a -->
+				</center>
                             </div>
                         </form>
                     </div>
